@@ -39,37 +39,31 @@ const Index = () => {
   }, []);
 
   const skills = [
-    { name: "JavaScript", category: "frontend" },
-    { name: "TypeScript", category: "frontend" },
-    { name: "React", category: "frontend" },
-    { name: "Node.js", category: "backend" },
-    { name: "Java", category: "backend" },
-    { name: "Spring Boot", category: "backend" },
-    { name: "Python", category: "backend" },
-    { name: "AWS", category: "cloud" },
-    { name: "Docker", category: "devops" },
+    { name: "Golang", category: "backend" },
     { name: "Kubernetes", category: "devops" },
-    { name: "PostgreSQL", category: "database" },
-    { name: "MongoDB", category: "database" },
+    { name: "OpenShift", category: "devops" },
+    { name: "Docker", category: "devops" },
+    { name: "CI/CD", category: "devops" },
+    { name: "Jenkins", category: "devops" },
   ];
 
   const featuredProjects = [
     {
-      title: "Enterprise Data Pipeline",
-      description: "Designed and implemented a scalable data processing system for Dell's enterprise customers, handling petabytes of data.",
-      tags: ["Java", "Spark", "Kafka", "AWS"],
+      title: "Container Orchestration Platform",
+      description: "Designed and implemented a Kubernetes-based orchestration system for microservices deployment at Dell.",
+      tags: ["Golang", "Kubernetes", "Docker", "CI/CD"],
       link: "/projects"
     },
     {
-      title: "Customer Dashboard",
-      description: "Built a real-time analytics dashboard for service monitoring, improving response time by 40%.",
-      tags: ["React", "TypeScript", "Node.js", "GraphQL"],
+      title: "DevOps Automation Pipeline",
+      description: "Built an end-to-end CI/CD pipeline with Jenkins, improving deployment efficiency by 60%.",
+      tags: ["Jenkins", "Docker", "OpenShift", "Golang"],
       link: "/projects"
     },
     {
-      title: "Inventory Management System",
-      description: "Developed an automated inventory system with predictive analytics for supply chain optimization.",
-      tags: ["Python", "TensorFlow", "PostgreSQL", "Docker"],
+      title: "Cloud Migration Framework",
+      description: "Developed a framework for migrating legacy applications to containerized cloud environments.",
+      tags: ["Kubernetes", "Docker", "Golang", "OpenShift"],
       link: "/projects"
     }
   ];
@@ -84,13 +78,13 @@ const Index = () => {
             ref={heroRef} 
             className="max-w-3xl opacity-0" 
           >
-            <Badge className="mb-4">Software Engineer @ Dell</Badge>
+            <Badge className="mb-4">Software Engineer 2 @ Dell</Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-balance">
-              Crafting elegant solutions to complex problems
+              Building robust cloud infrastructure & DevOps solutions
             </h1>
             <p className="text-xl text-muted-foreground mb-8 text-balance">
-              I'm Alex Chen, a software engineer specializing in building exceptional digital experiences. 
-              Currently, I'm focused on building accessible, human-centered products at Dell Technologies.
+              I'm Rishabh Raj, a software engineer specializing in Kubernetes, Docker, and cloud-native technologies. 
+              Currently, I'm focused on developing scalable infrastructure solutions at Dell Technologies.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg">
@@ -116,7 +110,7 @@ const Index = () => {
                 Technical Proficiency
               </h2>
               <p className="text-lg text-muted-foreground">
-                With over 5 years of experience, I've developed expertise across the full software development stack.
+                With experience at Dell Technologies and Wipro, I've developed expertise in cloud-native technologies and DevOps practices.
               </p>
             </div>
 
@@ -124,29 +118,9 @@ const Index = () => {
               <Card className="glass-card hover-scale">
                 <CardHeader>
                   <Code className="h-8 w-8 mb-2" />
-                  <CardTitle>Frontend Development</CardTitle>
-                  <CardDescription>
-                    Building responsive, accessible user interfaces
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {skills
-                      .filter(skill => skill.category === "frontend")
-                      .map(skill => (
-                        <Badge key={skill.name} variant="secondary">{skill.name}</Badge>
-                      ))
-                    }
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card hover-scale">
-                <CardHeader>
-                  <Server className="h-8 w-8 mb-2" />
                   <CardTitle>Backend Development</CardTitle>
                   <CardDescription>
-                    Creating robust, scalable server applications
+                    Building scalable applications with Golang
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -163,20 +137,37 @@ const Index = () => {
 
               <Card className="glass-card hover-scale">
                 <CardHeader>
-                  <Database className="h-8 w-8 mb-2" />
-                  <CardTitle>Infrastructure & Data</CardTitle>
+                  <Server className="h-8 w-8 mb-2" />
+                  <CardTitle>DevOps & CI/CD</CardTitle>
                   <CardDescription>
-                    Managing cloud infrastructure and databases
+                    Automating deployment and infrastructure
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {skills
-                      .filter(skill => ["cloud", "devops", "database"].includes(skill.category))
+                      .filter(skill => skill.category === "devops")
                       .map(skill => (
                         <Badge key={skill.name} variant="secondary">{skill.name}</Badge>
                       ))
                     }
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card hover-scale">
+                <CardHeader>
+                  <Database className="h-8 w-8 mb-2" />
+                  <CardTitle>Container Orchestration</CardTitle>
+                  <CardDescription>
+                    Managing containerized applications at scale
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Kubernetes</Badge>
+                    <Badge variant="secondary">Docker</Badge>
+                    <Badge variant="secondary">OpenShift</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -195,7 +186,7 @@ const Index = () => {
                 Featured Projects
               </h2>
               <p className="text-lg text-muted-foreground mb-12">
-                A selection of projects I've worked on at Dell and in my personal time.
+                A selection of projects I've worked on at Dell Technologies and Wipro.
               </p>
             </div>
 
@@ -246,8 +237,7 @@ const Index = () => {
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
             I'm currently open to new opportunities and collaborations. 
-            If you're looking for a software engineer who brings both technical expertise and a 
-            user-centered approach, let's connect.
+            If you're looking for a software engineer with expertise in cloud-native technologies and DevOps, let's connect.
           </p>
           <Button asChild size="lg" variant="secondary">
             <Link to="/contact">Get in Touch</Link>

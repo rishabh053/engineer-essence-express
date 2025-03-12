@@ -35,52 +35,39 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: "Software Engineer II",
+      title: "Software Engineer 2",
       company: "Dell Technologies",
-      location: "Austin, TX",
-      period: "Jun 2021 - Present",
+      location: "Bengaluru, Karnataka, India",
+      period: "Nov 2022 - Present",
       description: [
-        "Lead developer for Dell's Enterprise Data Pipeline, a system processing 5TB+ of data daily",
-        "Architected and implemented microservices for real-time analytics dashboard used by 200+ enterprise clients",
-        "Optimized database queries resulting in 40% performance improvement",
-        "Mentored junior engineers and led technical design reviews"
+        "Lead developer for containerized microservices infrastructure using Kubernetes and Docker",
+        "Architected and implemented CI/CD pipelines for automated testing and deployment",
+        "Optimized container orchestration resulting in 45% performance improvement",
+        "Collaborated with cross-functional teams to design scalable cloud solutions"
       ],
-      technologies: ["Java", "Spring Boot", "React", "AWS", "Kubernetes", "PostgreSQL"]
+      technologies: ["Golang", "Kubernetes", "Docker", "OpenShift", "CI/CD", "Jenkins"]
     },
     {
-      title: "Software Engineer",
-      company: "Acme Tech",
-      location: "Austin, TX",
-      period: "Aug 2019 - May 2021",
+      title: "Project Engineer",
+      company: "Wipro",
+      location: "Bengaluru, Karnataka, India",
+      period: "Sep 2020 - Oct 2022",
       description: [
-        "Developed RESTful APIs for financial data processing system",
-        "Built responsive frontend applications using React and TypeScript",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Collaborated with UX team to improve user experience"
+        "Developed automation scripts for infrastructure provisioning and configuration",
+        "Built and maintained CI/CD pipelines using Jenkins for multiple projects",
+        "Implemented containerization strategies for legacy applications",
+        "Collaborated with development teams to improve deployment workflows"
       ],
-      technologies: ["JavaScript", "TypeScript", "React", "Node.js", "Docker", "MongoDB"]
-    },
-    {
-      title: "Junior Developer",
-      company: "TechStart",
-      location: "Austin, TX",
-      period: "Jul 2017 - Jul 2019",
-      description: [
-        "Created internal tools for improving developer productivity",
-        "Maintained and enhanced e-commerce platform serving 10,000+ customers",
-        "Participated in Agile development processes",
-        "Fixed critical bugs and implemented new features"
-      ],
-      technologies: ["JavaScript", "PHP", "MySQL", "HTML/CSS", "Git"]
+      technologies: ["Docker", "Jenkins", "CI/CD", "Bash", "Python", "Git"]
     }
   ];
 
   const skills = {
-    "Languages": ["JavaScript", "TypeScript", "Java", "Python", "SQL", "HTML/CSS"],
-    "Frameworks & Libraries": ["React", "Node.js", "Spring Boot", "Express.js", "Next.js", "Redux"],
-    "Databases": ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
-    "Cloud & DevOps": ["AWS", "Docker", "Kubernetes", "CI/CD", "Jenkins", "Terraform"],
-    "Tools & Methodologies": ["Git", "Agile/Scrum", "JIRA", "RESTful APIs", "GraphQL", "Microservices"]
+    "Programming Languages": ["Golang", "Python", "Bash"],
+    "Container & Orchestration": ["Kubernetes", "Docker", "OpenShift", "Helm"],
+    "CI/CD & DevOps": ["Jenkins", "GitLab CI", "ArgoCD", "Tekton"],
+    "Cloud & Infrastructure": ["AWS", "Azure", "Terraform", "Ansible"],
+    "Tools & Methodologies": ["Git", "Agile/Scrum", "JIRA", "Prometheus", "Grafana"]
   };
 
   return (
@@ -93,7 +80,7 @@ const Experience = () => {
               Professional Journey
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              My career path and skills developed over 5+ years in the software industry.
+              My career path and skills developed in the cloud infrastructure and DevOps space.
             </p>
           </div>
         </div>
