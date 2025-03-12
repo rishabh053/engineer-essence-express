@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Alex Chen</h3>
+            <h3 className="text-lg font-semibold mb-4">Rishabh Raj</h3>
             <p className="text-muted-foreground text-sm mb-4">
               Software Engineer at Dell Technologies with a passion for building elegant, 
               user-centered applications that solve real-world problems.
@@ -45,7 +45,7 @@ const Footer = () => {
                 <Twitter size={20} />
               </a>
               <a 
-                href="mailto:alex@example.com" 
+                href="mailto:rishabh@example.com" 
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"
               >
@@ -88,10 +88,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <p className="text-muted-foreground text-sm mb-2">
-              Austin, TX
+              Bengaluru, Karnataka, India
             </p>
             <p className="text-muted-foreground text-sm mb-4">
-              alex@example.com
+              rishabh@example.com
             </p>
             <Link 
               to="/contact" 
@@ -104,7 +104,7 @@ const Footer = () => {
         
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} Alex Chen. All rights reserved.
+            © {currentYear} Rishabh Raj. All rights reserved.
           </p>
         </div>
       </div>
