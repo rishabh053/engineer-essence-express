@@ -1,27 +1,34 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code, Server, Database, Terminal, Github, GitBranch } from 'lucide-react';
 import Layout from '../components/Layout';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-
 const Index = () => {
   // Skills data with corresponding icons
-  const skills = [
-    { name: "Golang", icon: <Code className="w-4 h-4 mr-1" /> },
-    { name: "Kubernetes", icon: <Server className="w-4 h-4 mr-1" /> },
-    { name: "OpenShift", icon: <Terminal className="w-4 h-4 mr-1" /> },
-    { name: "Docker", icon: <Database className="w-4 h-4 mr-1" /> },
-    { name: "CI/CD", icon: <GitBranch className="w-4 h-4 mr-1" /> },
-    { name: "Jenkins", icon: <Github className="w-4 h-4 mr-1" /> },
-  ];
-
-  return (
-    <Layout>
+  const skills = [{
+    name: "Golang",
+    icon: <Code className="w-4 h-4 mr-1" />
+  }, {
+    name: "Kubernetes",
+    icon: <Server className="w-4 h-4 mr-1" />
+  }, {
+    name: "OpenShift",
+    icon: <Terminal className="w-4 h-4 mr-1" />
+  }, {
+    name: "Docker",
+    icon: <Database className="w-4 h-4 mr-1" />
+  }, {
+    name: "CI/CD",
+    icon: <GitBranch className="w-4 h-4 mr-1" />
+  }, {
+    name: "Jenkins",
+    icon: <Github className="w-4 h-4 mr-1" />
+  }];
+  return <Layout>
       {/* Hero Section - Simplified */}
       <section className="relative min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1498050108023-c5249f4df085')] bg-cover bg-center opacity-3"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1498050108023-c5249f4df085')] bg-cover bg-center opacity-3 bg-zinc-50"></div>
         <div className="section-container relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <Badge className="mb-4">Software Engineer 2 @ Dell</Badge>
@@ -53,16 +60,10 @@ const Index = () => {
               Technical Skills
             </h2>
             <div className="flex flex-wrap gap-3 justify-center">
-              {skills.map((skill) => (
-                <Badge 
-                  key={skill.name} 
-                  variant="secondary" 
-                  className="text-sm px-3 py-1 flex items-center"
-                >
+              {skills.map(skill => <Badge key={skill.name} variant="secondary" className="text-sm px-3 py-1 flex items-center">
                   {skill.icon}
                   {skill.name}
-                </Badge>
-              ))}
+                </Badge>)}
             </div>
           </div>
         </div>
@@ -84,8 +85,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Index;
