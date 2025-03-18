@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code, Server, Database, Terminal, Github, GitBranch } from 'lucide-react';
@@ -28,7 +29,7 @@ const Index = () => {
   return <Layout>
       {/* Hero Section - Simplified */}
       <section className="relative min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1498050108023-c5249f4df085')] bg-cover bg-center opacity-3 bg-zinc-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-slate-100 backdrop-blur-sm"></div>
         <div className="section-container relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <Badge className="mb-4">Software Engineer 2 @ Dell</Badge>
