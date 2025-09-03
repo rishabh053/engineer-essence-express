@@ -72,54 +72,54 @@ const Experience = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-16">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto">
-            <div className="skill-badge mb-8 w-fit animate-fade-in">Experience</div>
-            <h1 className="hero-text mb-8 text-balance animate-fade-in" style={{ animationDelay: '0.1s' }}>
+      <section className="apple-section apple-section-hero bg-gradient-to-b from-background to-apple-gray-50/30">
+        <div className="apple-container">
+          <div className="max-w-5xl mx-auto text-center apple-spacing-lg">
+            <div className="apple-skill mb-8 w-fit mx-auto animate-fade-in">Experience</div>
+            <h1 className="apple-hero mb-8 text-balance animate-fade-in" style={{ animationDelay: '0.1s' }}>
               Professional Journey
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="apple-subtitle mb-16 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               My career path and skills developed in the cloud infrastructure and DevOps space.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="section-container">
+      <section className="apple-section apple-section-padding">
+        <div className="apple-container">
           <div ref={timelineRef} className="opacity-0">
-            <h2 className="section-title text-center mb-20">Work History</h2>
-            <div className="space-y-12 max-w-4xl mx-auto">
+            <h2 className="apple-headline text-center mb-20">Work History</h2>
+            <div className="apple-spacing-xl max-w-5xl mx-auto">
               {experiences.map((exp, index) => (
-                <div key={index} className="apple-card p-8 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-6">
+                <div key={index} className="apple-card p-12 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8 mb-8">
                     <div>
-                      <h3 className="text-2xl font-semibold mb-2">{exp.title}</h3>
-                      <p className="text-muted-foreground text-lg">
+                      <h3 className="apple-title mb-3">{exp.title}</h3>
+                      <p className="apple-subtitle">
                         {exp.company} • {exp.location}
                       </p>
                     </div>
-                    <div className="skill-badge whitespace-nowrap">
+                    <div className="apple-skill whitespace-nowrap">
                       {exp.period}
                     </div>
                   </div>
                   
-                  <div className="h-px bg-border/50 my-6"></div>
+                  <div className="h-px bg-border/30 my-8"></div>
                   
-                  <div className="space-y-6">
-                    <ul className="space-y-3 text-muted-foreground">
+                  <div className="apple-spacing-lg">
+                    <ul className="apple-spacing-sm">
                       {exp.description.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="leading-relaxed">{item}</span>
+                        <li key={idx} className="flex items-start gap-4">
+                          <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                          <span className="apple-body">{item}</span>
                         </li>
                       ))}
                     </ul>
                     
-                    <div className="flex flex-wrap gap-3 pt-4">
+                    <div className="flex flex-wrap gap-3 pt-6">
                       {exp.technologies.map((tech, idx) => (
-                        <span key={idx} className="skill-badge text-xs">{tech}</span>
+                        <span key={idx} className="apple-skill">{tech}</span>
                       ))}
                     </div>
                   </div>
@@ -130,17 +130,17 @@ const Experience = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-b from-background to-muted/20">
-        <div className="section-container">
+      <section className="apple-section apple-section-padding bg-apple-gray-50/50">
+        <div className="apple-container">
           <div ref={skillsRef} className="opacity-0">
-            <h2 className="section-title text-center mb-20">Skills & Expertise</h2>
+            <h2 className="apple-headline text-center mb-20">Skills & Expertise</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {Object.entries(skills).map(([category, skillList], index) => (
                 <div key={category} className="apple-card p-8 animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <h3 className="text-xl font-semibold mb-6">{category}</h3>
+                  <h3 className="apple-title mb-6">{category}</h3>
                   <div className="flex flex-wrap gap-3">
                     {skillList.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="skill-badge text-xs">{skill}</span>
+                      <span key={skillIndex} className="apple-skill">{skill}</span>
                     ))}
                   </div>
                 </div>

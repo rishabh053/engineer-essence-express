@@ -7,21 +7,21 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gradient-to-t from-muted/20 to-background py-24 border-t border-border/50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">Rishabh Raj</h3>
-            <p className="text-muted-foreground leading-relaxed max-w-sm">
+    <footer className="apple-section apple-section-padding bg-apple-gray-50/50 border-t border-border/30">
+      <div className="apple-container">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="apple-spacing-md">
+            <h3 className="apple-title">Rishabh Raj</h3>
+            <p className="apple-body max-w-sm">
               Software Engineer at Dell Technologies with a passion for building elegant, 
               user-centered applications that solve real-world problems.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <a 
                 href="https://github.com" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="p-3 rounded-2xl bg-muted/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+                className="p-4 rounded-full bg-background text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300 hover:scale-110"
                 aria-label="GitHub"
               >
                 <Github size={20} />
@@ -30,7 +30,7 @@ const Footer = () => {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="p-3 rounded-2xl bg-muted/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+                className="p-4 rounded-full bg-background text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
@@ -39,14 +39,14 @@ const Footer = () => {
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="p-3 rounded-2xl bg-muted/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+                className="p-4 rounded-full bg-background text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300 hover:scale-110"
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
               </a>
               <a 
                 href="mailto:rishabh@example.com" 
-                className="p-3 rounded-2xl bg-muted/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+                className="p-4 rounded-full bg-background text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
                 <Mail size={20} />
@@ -54,13 +54,13 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
-            <ul className="space-y-3">
+          <div className="apple-spacing-md">
+            <h3 className="apple-title">Quick Links</h3>
+            <ul className="apple-spacing-sm">
               <li>
                 <Link 
                   to="/" 
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
+                  className="apple-body hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
                 >
                   Home
                 </Link>
@@ -68,7 +68,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/about" 
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
+                  className="apple-body hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
                 >
                   About
                 </Link>
@@ -76,7 +76,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/experience" 
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
+                  className="apple-body hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
                 >
                   Experience
                 </Link>
@@ -84,7 +84,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/contact" 
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
+                  className="apple-body hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
                 >
                   Contact
                 </Link>
@@ -92,27 +92,27 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold">Contact</h3>
-            <div className="space-y-3">
-              <p className="text-muted-foreground">
+          <div className="apple-spacing-md">
+            <h3 className="apple-title">Contact</h3>
+            <div className="apple-spacing-sm">
+              <p className="apple-body">
                 Bengaluru, Karnataka, India
               </p>
-              <p className="text-muted-foreground">
+              <p className="apple-body">
                 rishabh@example.com
               </p>
             </div>
             <Link 
               to="/contact" 
-              className="inline-block apple-button-primary"
+              className="apple-button-primary"
             >
               Get in Touch
             </Link>
           </div>
         </div>
         
-        <div className="border-t border-border/50 mt-16 pt-8 text-center">
-          <p className="text-muted-foreground">
+        <div className="border-t border-border/30 mt-20 pt-10 text-center">
+          <p className="apple-caption">
             © {currentYear} Rishabh Raj. All rights reserved.
           </p>
         </div>

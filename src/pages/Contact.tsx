@@ -73,46 +73,46 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-16">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto">
-            <div className="skill-badge mb-8 w-fit animate-fade-in">Contact</div>
-            <h1 className="hero-text mb-8 text-balance animate-fade-in" style={{ animationDelay: '0.1s' }}>
+      <section className="apple-section apple-section-hero bg-gradient-to-b from-background to-apple-gray-50/30">
+        <div className="apple-container">
+          <div className="max-w-5xl mx-auto text-center apple-spacing-lg">
+            <div className="apple-skill mb-8 w-fit mx-auto animate-fade-in">Contact</div>
+            <h1 className="apple-hero mb-8 text-balance animate-fade-in" style={{ animationDelay: '0.1s' }}>
               Get in Touch
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="apple-subtitle mb-16 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Have a question or want to work together? Feel free to reach out.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <div className="space-y-12 animate-slide-right">
-              <h2 className="section-title">Contact Information</h2>
+      <section className="apple-section apple-section-padding">
+        <div className="apple-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            <div className="apple-spacing-2xl animate-slide-right">
+              <h2 className="apple-headline">Contact Information</h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="apple-card p-6 group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="flex items-center gap-4">
-                      <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:bg-primary/20 transition-colors">
+                  <div key={index} className="apple-card p-8 group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div className="flex items-center gap-6">
+                      <div className="bg-accent/10 p-4 rounded-full text-accent group-hover:bg-accent/20 transition-colors">
                         {info.icon}
                       </div>
                       <div>
-                        <h3 className="font-medium text-sm text-muted-foreground">{info.label}</h3>
+                        <h3 className="apple-caption uppercase tracking-wide mb-1">{info.label}</h3>
                         {info.link ? (
                           <a 
                             href={info.link} 
-                            className="text-foreground hover:text-primary transition-colors font-medium"
+                            className="apple-body hover:text-accent transition-colors"
                             target={info.link.startsWith('mailto') ? undefined : '_blank'}
                             rel="noreferrer"
                           >
                             {info.value}
                           </a>
                         ) : (
-                          <p className="text-foreground font-medium">{info.value}</p>
+                          <p className="apple-body">{info.value}</p>
                         )}
                       </div>
                     </div>
@@ -121,38 +121,38 @@ const Contact = () => {
               </div>
 
               <div className="apple-card p-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <h3 className="text-xl font-semibold mb-4">Availability</h3>
-                <p className="text-muted-foreground mb-6">
+                <h3 className="apple-title mb-6">Availability</h3>
+                <p className="apple-body mb-8">
                   I'm currently open to:
                 </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-muted-foreground">Full-time senior engineering positions</span>
+                <ul className="apple-spacing-sm">
+                  <li className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                    <span className="apple-body">Full-time senior engineering positions</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-muted-foreground">Technical consulting opportunities</span>
+                  <li className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                    <span className="apple-body">Technical consulting opportunities</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-muted-foreground">Speaking engagements at tech conferences</span>
+                  <li className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                    <span className="apple-body">Speaking engagements at tech conferences</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-muted-foreground">Mentoring and educational collaborations</span>
+                  <li className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                    <span className="apple-body">Mentoring and educational collaborations</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <h2 className="section-title mb-12">Send Me a Message</h2>
-              <div className="apple-card p-8">
-                <form onSubmit={handleSubmit} className="space-y-8">
+              <h2 className="apple-headline mb-12">Send Me a Message</h2>
+              <div className="apple-card p-10">
+                <form onSubmit={handleSubmit} className="apple-spacing-lg">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-3">
-                      <label htmlFor="name" className="text-sm font-medium text-muted-foreground">
+                    <div className="apple-spacing-xs">
+                      <label htmlFor="name" className="apple-caption uppercase tracking-wide">
                         Name
                       </label>
                       <Input
@@ -161,12 +161,12 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Your name"
-                        className="rounded-2xl border-border/50 bg-muted/30 focus:border-primary focus:bg-background transition-colors"
+                        className="rounded-2xl border-border/30 bg-apple-gray-50/50 focus:border-accent focus:bg-background transition-colors h-12"
                         required
                       />
                     </div>
-                    <div className="space-y-3">
-                      <label htmlFor="email" className="text-sm font-medium text-muted-foreground">
+                    <div className="apple-spacing-xs">
+                      <label htmlFor="email" className="apple-caption uppercase tracking-wide">
                         Email
                       </label>
                       <Input
@@ -176,14 +176,14 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Your email"
-                        className="rounded-2xl border-border/50 bg-muted/30 focus:border-primary focus:bg-background transition-colors"
+                        className="rounded-2xl border-border/30 bg-apple-gray-50/50 focus:border-accent focus:bg-background transition-colors h-12"
                         required
                       />
                     </div>
                   </div>
                   
-                  <div className="space-y-3">
-                    <label htmlFor="subject" className="text-sm font-medium text-muted-foreground">
+                  <div className="apple-spacing-xs">
+                    <label htmlFor="subject" className="apple-caption uppercase tracking-wide">
                       Subject
                     </label>
                     <Input
@@ -192,13 +192,13 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="What's this about?"
-                      className="rounded-2xl border-border/50 bg-muted/30 focus:border-primary focus:bg-background transition-colors"
+                      className="rounded-2xl border-border/30 bg-apple-gray-50/50 focus:border-accent focus:bg-background transition-colors h-12"
                       required
                     />
                   </div>
                   
-                  <div className="space-y-3">
-                    <label htmlFor="message" className="text-sm font-medium text-muted-foreground">
+                  <div className="apple-spacing-xs">
+                    <label htmlFor="message" className="apple-caption uppercase tracking-wide">
                       Message
                     </label>
                     <Textarea
@@ -208,14 +208,14 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Your message"
                       rows={6}
-                      className="rounded-2xl border-border/50 bg-muted/30 focus:border-primary focus:bg-background transition-colors resize-none"
+                      className="rounded-2xl border-border/30 bg-apple-gray-50/50 focus:border-accent focus:bg-background transition-colors resize-none"
                       required
                     />
                   </div>
                   
-                  <Button type="submit" disabled={isSubmitting} className="w-full apple-button-primary">
+                  <button type="submit" disabled={isSubmitting} className="w-full apple-button-primary">
                     {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
+                  </button>
                 </form>
               </div>
             </div>

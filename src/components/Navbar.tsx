@@ -39,32 +39,30 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-500 ease-out",
-        scrolled 
-          ? "bg-background/80 backdrop-blur-apple border-b border-border/50 py-3" 
-          : "bg-transparent border-transparent py-4"
+        "apple-nav",
+        scrolled && "apple-nav-scrolled"
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
+      <div className="apple-container">
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="sf-pro-display text-xl font-semibold text-foreground hover:text-accent transition-colors">
             Rishabh Raj
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 hover:text-primary relative py-2",
-                  "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary",
+                  "sf-pro-text text-base font-normal transition-all duration-300 hover:text-accent relative py-2",
+                  "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent",
                   "after:scale-x-0 after:origin-left after:transition-transform after:duration-300",
                   "hover:after:scale-x-100",
                   isActive(item.path) 
-                    ? "text-primary after:scale-x-100" 
-                    : "text-muted-foreground"
+                    ? "text-accent after:scale-x-100" 
+                    : "text-foreground"
                 )}
               >
                 {item.name}
@@ -101,18 +99,18 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden pt-6 pb-4">
-            <div className="apple-card p-6 animate-scale-in">
-              <div className="flex flex-col space-y-4">
+            <div className="apple-card p-8 animate-scale-in">
+              <div className="flex flex-col space-y-2">
                 {navItems.map((item, index) => (
                   <Link
                     key={item.name}
                     to={item.path}
                     className={cn(
-                      "text-sm font-medium py-3 px-4 rounded-xl transition-all duration-300",
-                      "hover:bg-muted/50 active:scale-95",
+                      "sf-pro-text text-base font-normal py-4 px-6 rounded-2xl transition-all duration-300",
+                      "hover:bg-apple-gray-100 active:scale-95",
                       isActive(item.path) 
-                        ? "text-primary bg-primary/10" 
-                        : "text-muted-foreground"
+                        ? "text-accent bg-accent/10" 
+                        : "text-foreground"
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                     style={{ animationDelay: `${index * 0.05}s` }}
