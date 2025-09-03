@@ -72,79 +72,78 @@ const Experience = () => {
 
   return (
     <Layout>
-      <section className="pt-24 pb-12">
+      <section className="pt-32 pb-16">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
-            <Badge className="mb-4">Experience</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <div className="skill-badge mb-8 w-fit animate-fade-in">Experience</div>
+            <h1 className="hero-text mb-8 text-balance animate-fade-in" style={{ animationDelay: '0.1s' }}>
               Professional Journey
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
               My career path and skills developed in the cloud infrastructure and DevOps space.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-24">
         <div className="section-container">
           <div ref={timelineRef} className="opacity-0">
-            <h2 className="text-2xl font-bold mb-12 text-center">Work History</h2>
-            <div className="space-y-8 max-w-4xl mx-auto">
+            <h2 className="section-title text-center mb-20">Work History</h2>
+            <div className="space-y-12 max-w-4xl mx-auto">
               {experiences.map((exp, index) => (
-                <Card key={index} className="glass-card hover-scale">
-                  <CardContent className="pt-6">
-                    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
-                      <div>
-                        <h3 className="font-bold text-xl">{exp.title}</h3>
-                        <p className="text-muted-foreground text-lg">
-                          {exp.company} • {exp.location}
-                        </p>
-                      </div>
-                      <Badge variant="outline" className="md:text-right whitespace-nowrap">
-                        {exp.period}
-                      </Badge>
+                <div key={index} className="apple-card p-8 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold mb-2">{exp.title}</h3>
+                      <p className="text-muted-foreground text-lg">
+                        {exp.company} • {exp.location}
+                      </p>
                     </div>
-                    
-                    <Separator className="my-4" />
-                    
-                    <div className="space-y-4">
-                      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                        {exp.description.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
-                      
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {exp.technologies.map((tech, idx) => (
-                          <Badge key={idx} variant="secondary">{tech}</Badge>
-                        ))}
-                      </div>
+                    <div className="skill-badge whitespace-nowrap">
+                      {exp.period}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                  
+                  <div className="h-px bg-border/50 my-6"></div>
+                  
+                  <div className="space-y-6">
+                    <ul className="space-y-3 text-muted-foreground">
+                      {exp.description.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <div className="flex flex-wrap gap-3 pt-4">
+                      {exp.technologies.map((tech, idx) => (
+                        <span key={idx} className="skill-badge text-xs">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-secondary">
+      <section className="py-24 bg-gradient-to-b from-background to-muted/20">
         <div className="section-container">
           <div ref={skillsRef} className="opacity-0">
-            <h2 className="text-2xl font-bold mb-12 text-center">Skills & Expertise</h2>
+            <h2 className="section-title text-center mb-20">Skills & Expertise</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Object.entries(skills).map(([category, skillList]) => (
-                <Card key={category} className="glass-card hover-scale">
-                  <CardContent className="pt-6">
-                    <h3 className="font-bold text-lg mb-4">{category}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {skillList.map((skill, index) => (
-                        <Badge key={index} variant="outline">{skill}</Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+              {Object.entries(skills).map(([category, skillList], index) => (
+                <div key={category} className="apple-card p-8 animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <h3 className="text-xl font-semibold mb-6">{category}</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {skillList.map((skill, skillIndex) => (
+                      <span key={skillIndex} className="skill-badge text-xs">{skill}</span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>

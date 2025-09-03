@@ -39,15 +39,15 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300 py-4 border-b",
+        "fixed top-0 w-full z-50 transition-all duration-500 ease-out",
         scrolled 
-          ? "bg-white/90 backdrop-blur-md border-gray-200 shadow-sm" 
-          : "bg-transparent border-transparent"
+          ? "bg-background/80 backdrop-blur-apple border-b border-border/50 py-3" 
+          : "bg-transparent border-transparent py-4"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-xl font-semibold text-primary">
+          <Link to="/" className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
             Rishabh Raj
           </Link>
           
@@ -58,8 +58,13 @@ const Navbar = () => {
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary link-underline",
-                  isActive(item.path) ? "text-primary" : "text-muted-foreground"
+                  "text-sm font-medium transition-all duration-300 hover:text-primary relative py-2",
+                  "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary",
+                  "after:scale-x-0 after:origin-left after:transition-transform after:duration-300",
+                  "hover:after:scale-x-100",
+                  isActive(item.path) 
+                    ? "text-primary after:scale-x-100" 
+                    : "text-muted-foreground"
                 )}
               >
                 {item.name}
@@ -69,31 +74,53 @@ const Navbar = () => {
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden"
+            className={cn(
+              "md:hidden p-2 rounded-xl transition-all duration-300",
+              "hover:bg-muted/50 active:scale-95"
+            )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <div className="relative w-6 h-6">
+              <span className={cn(
+                "absolute block h-0.5 w-6 bg-current transform transition-all duration-300",
+                mobileMenuOpen ? "rotate-45 top-3" : "top-2"
+              )} />
+              <span className={cn(
+                "absolute block h-0.5 w-6 bg-current transform transition-all duration-300 top-3",
+                mobileMenuOpen ? "opacity-0" : "opacity-100"
+              )} />
+              <span className={cn(
+                "absolute block h-0.5 w-6 bg-current transform transition-all duration-300",
+                mobileMenuOpen ? "-rotate-45 top-3" : "top-4"
+              )} />
+            </div>
           </button>
         </div>
         
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden pt-4 pb-2 animate-fade-in">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={cn(
-                    "text-sm font-medium py-2 transition-colors hover:text-primary",
-                    isActive(item.path) ? "text-primary" : "text-muted-foreground"
-                  )}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+          <div className="md:hidden pt-6 pb-4">
+            <div className="apple-card p-6 animate-scale-in">
+              <div className="flex flex-col space-y-4">
+                {navItems.map((item, index) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={cn(
+                      "text-sm font-medium py-3 px-4 rounded-xl transition-all duration-300",
+                      "hover:bg-muted/50 active:scale-95",
+                      isActive(item.path) 
+                        ? "text-primary bg-primary/10" 
+                        : "text-muted-foreground"
+                    )}
+                    onClick={() => setMobileMenuOpen(false)}
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         )}

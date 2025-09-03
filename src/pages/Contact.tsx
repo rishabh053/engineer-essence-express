@@ -73,139 +73,151 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="pt-24 pb-12">
+      <section className="pt-32 pb-16">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
-            <Badge className="mb-4">Contact</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <div className="skill-badge mb-8 w-fit animate-fade-in">Contact</div>
+            <h1 className="hero-text mb-8 text-balance animate-fade-in" style={{ animationDelay: '0.1s' }}>
               Get in Touch
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Have a question or want to work together? Feel free to reach out.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-24">
         <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div className="space-y-12 animate-slide-right">
+              <h2 className="section-title">Contact Information</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {contactInfo.map((info, index) => (
-                  <Card key={index} className="glass-card hover-scale">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-4">
-                        <div className="bg-primary/10 p-3 rounded-full text-primary">
-                          {info.icon}
-                        </div>
-                        <div>
-                          <h3 className="font-medium">{info.label}</h3>
-                          {info.link ? (
-                            <a 
-                              href={info.link} 
-                              className="text-muted-foreground hover:text-primary transition-colors"
-                              target={info.link.startsWith('mailto') ? undefined : '_blank'}
-                              rel="noreferrer"
-                            >
-                              {info.value}
-                            </a>
-                          ) : (
-                            <p className="text-muted-foreground">{info.value}</p>
-                          )}
-                        </div>
+                  <div key={index} className="apple-card p-6 group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div className="flex items-center gap-4">
+                      <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:bg-primary/20 transition-colors">
+                        {info.icon}
                       </div>
-                    </CardContent>
-                  </Card>
+                      <div>
+                        <h3 className="font-medium text-sm text-muted-foreground">{info.label}</h3>
+                        {info.link ? (
+                          <a 
+                            href={info.link} 
+                            className="text-foreground hover:text-primary transition-colors font-medium"
+                            target={info.link.startsWith('mailto') ? undefined : '_blank'}
+                            rel="noreferrer"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-foreground font-medium">{info.value}</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
 
-              <div className="bg-secondary rounded-lg p-6">
-                <h3 className="font-bold text-lg mb-3">Availability</h3>
-                <p className="text-muted-foreground mb-4">
+              <div className="apple-card p-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <h3 className="text-xl font-semibold mb-4">Availability</h3>
+                <p className="text-muted-foreground mb-6">
                   I'm currently open to:
                 </p>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Full-time senior engineering positions</li>
-                  <li>Technical consulting opportunities</li>
-                  <li>Speaking engagements at tech conferences</li>
-                  <li>Mentoring and educational collaborations</li>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Full-time senior engineering positions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Technical consulting opportunities</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Speaking engagements at tech conferences</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Mentoring and educational collaborations</span>
+                  </li>
                 </ul>
               </div>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Send Me a Message</h2>
-              <Card className="glass-card">
-                <CardContent className="pt-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium">
-                          Name
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your name"
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium">
-                          Email
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="Your email"
-                          required
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label htmlFor="subject" className="text-sm font-medium">
-                        Subject
+            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <h2 className="section-title mb-12">Send Me a Message</h2>
+              <div className="apple-card p-8">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <label htmlFor="name" className="text-sm font-medium text-muted-foreground">
+                        Name
                       </label>
                       <Input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleChange}
-                        placeholder="What's this about?"
+                        placeholder="Your name"
+                        className="rounded-2xl border-border/50 bg-muted/30 focus:border-primary focus:bg-background transition-colors"
                         required
                       />
                     </div>
-                    
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">
-                        Message
+                    <div className="space-y-3">
+                      <label htmlFor="email" className="text-sm font-medium text-muted-foreground">
+                        Email
                       </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
                         onChange={handleChange}
-                        placeholder="Your message"
-                        rows={6}
+                        placeholder="Your email"
+                        className="rounded-2xl border-border/50 bg-muted/30 focus:border-primary focus:bg-background transition-colors"
                         required
                       />
                     </div>
-                    
-                    <Button type="submit" disabled={isSubmitting} className="w-full">
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <label htmlFor="subject" className="text-sm font-medium text-muted-foreground">
+                      Subject
+                    </label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="What's this about?"
+                      className="rounded-2xl border-border/50 bg-muted/30 focus:border-primary focus:bg-background transition-colors"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <label htmlFor="message" className="text-sm font-medium text-muted-foreground">
+                      Message
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Your message"
+                      rows={6}
+                      className="rounded-2xl border-border/50 bg-muted/30 focus:border-primary focus:bg-background transition-colors resize-none"
+                      required
+                    />
+                  </div>
+                  
+                  <Button type="submit" disabled={isSubmitting} className="w-full apple-button-primary">
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
